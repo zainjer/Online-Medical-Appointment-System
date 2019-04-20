@@ -1,0 +1,111 @@
+﻿<Window x:Class="Project.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Registration" Height="305.058" Width="405.78" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Margin="10">
+
+        <StackPanel>
+            <Frame x:Name="Profile"/>
+            <StackPanel x:Name="Userreg">
+                <TextBlock HorizontalAlignment="Center" FontSize="25" Text="Profile Registration" FontFamily="Century Gothic" Height="37" Margin="82,0,82.6,0" />
+            
+                <StackPanel>
+                <!--Name-->
+                <Grid Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Full Name"/>
+                    <TextBox x:Name="txtfullname" Grid.Column="1" Margin="0 0 20 0"/>
+                    <TextBlock Grid.Column="2" Text="Father's Name" Margin="0 0 -20 0"/>
+                    <TextBox x:Name="txtfathername" Grid.Column="3" Margin="20 0 0 0" />
+                </Grid>
+
+                <!--Gender Sexuality Birth Date-->
+                <Grid Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Gender" Grid.ColumnSpan="2" Margin="0,3,84.2,-3.2"/>
+                    <ComboBox x:Name="comboGender" SelectedIndex="0" Grid.Column="1" Margin="3 0 5 2">
+                        <ComboBoxItem>Male</ComboBoxItem>
+                        <ComboBoxItem>Female</ComboBoxItem>
+                        <ComboBoxItem>Other</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Grid.Column="2" Text="Martial" Margin="4.8,3,78.2,-4.2" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="comboMartial" SelectedIndex="0" Grid.Column="3" Margin="0,0,76,1.8" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="80">
+                        <ComboBoxItem>Umarried</ComboBoxItem>
+                        <ComboBoxItem>Married</ComboBoxItem>
+                        <ComboBoxItem>Unspecified</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Grid.Column="4" Text="Date of Birth" Margin="21.8,3,25.4,-3.2" Grid.ColumnSpan="2"/>
+                    <DatePicker x:Name="dob" Grid.Column="5" Margin="10.2,0,0.2,-0.2" Height="24" VerticalAlignment="Bottom"/>
+                </Grid>
+                <!--Email & Contact Number-->
+                <Grid Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Contact No." Margin="0 0 -5 0"/>
+                    <TextBox x:Name="txtPhone" Grid.Column="1" Margin="5 0 0 0"/>
+                    <TextBlock Grid.Column="2" Text="Email" HorizontalAlignment="Right" Margin="0 0 5 0"/>
+                    <TextBox x:Name="TxtEmail" Grid.Column="3" />
+                </Grid>
+                <!--Address Occupation-->
+                <Grid Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Address" Margin="0 0 -5 0"/>
+                    <TextBox x:Name="txtaddress" Margin="55,0,38.8,-0.6" Grid.ColumnSpan="3"/>
+                    <TextBlock Grid.Column="2" Text="Occupation" HorizontalAlignment="Right" Margin="0,0,88.6,-0.6" Grid.ColumnSpan="2" Width="69"/>
+                    <TextBox x:Name="txtoccupation" Grid.Column="3" Margin="36.2,0,-0.4,-0.6" />
+                </Grid>
+                <!--Blood group and Diagonsis-->
+                <Grid Margin="0,5,-0.4,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Diagnosis" Margin="0 0 -5 0"/>
+                    <TextBox x:Name="txtDiagnosis" Margin="61,0,31.6,9.8" Grid.ColumnSpan="3"/>
+                    <TextBlock Grid.Column="2" Text="Blood Group" HorizontalAlignment="Right" Margin="0,0,76.4,-1.2" Grid.ColumnSpan="2" Width="71"/>
+                    <ComboBox x:Name="comboBlood" SelectedIndex="0" Grid.Column="3" Margin="50.4,0,4.4,10">
+
+                        <ComboBoxItem>A+</ComboBoxItem>
+                        <ComboBoxItem>B+</ComboBoxItem>
+                        <ComboBoxItem>AB+</ComboBoxItem>
+                        <ComboBoxItem>O+</ComboBoxItem>
+                        <ComboBoxItem>O-</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <TextBlock Text="BIOGRAPHY (Optional)" HorizontalAlignment="Center"/>
+                <RichTextBox x:Name="txtbio" Height="32" Margin="0,0,-0.4,0"/>
+                <Button x:Name="btnUserRegister" Content="Register" Width="100" Margin="10" Click="Register" />
+            </StackPanel>
+        </StackPanel>
+        </StackPanel>
+
+    </Border>
+
+</Window>

@@ -1,0 +1,98 @@
+﻿<Page x:Class="Project.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="Profile" Loaded="loaded" >
+    <StackPanel>
+    <StackPanel Background="#E6E6DC">
+        <StackPanel Height="150">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00628B" Offset="1"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFEEEEEE" Offset="0.964"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Grid Margin="20 20 10 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="2*"/>
+
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Height="100" Width="100" Source="Avatar.png">
+                    <Image.Effect>
+                        <DropShadowEffect RenderingBias="Quality" ShadowDepth="2" BlurRadius="3" Opacity="0.8"/>
+                    </Image.Effect>
+                </Image>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" >
+                    <Grid Width="3" Background="#00628B" Margin="25 0 8 0"></Grid>
+                    <StackPanel Margin="0 0 0 0"  Grid.Column="1">
+                        <TextBlock x:Name="bindFullname" />
+                        <TextBlock Foreground="Black" x:Name="bindEmail" Text="Email@mail.com" />
+                        <TextBlock Foreground="Black" x:Name="BindContact" Text="03303303300"/>
+                        <TextBlock Foreground="Black" x:Name="bindSex" Text="Male" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="2" >
+                    <Grid Width="3" Background="#00628B" Margin="15 0 8 0"></Grid>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Foreground="Black" x:Name="BindSpeciality_Occupation" Text="Speciality" />
+                        <TextBlock Foreground="Black" x:Name="BindExperience_Diagnosis" Text="Appointments today Diagonsis"/>
+                        <TextBlock Foreground="Black" x:Name="BindLastAppointment" Text="Last Appointment ID"/>
+                        <TextBlock Foreground="Black" x:Name="BindLastDoctor" Text="Last Doctor"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button x:Name="BtnLogout" Background="#00628B" Foreground="White" Margin="0 0 0 5" Content="Logout" VerticalAlignment="Center" HorizontalAlignment="Left" Height="23" Width="87" Click="Logout" />
+                    <Button x:Name="btnExit" Background="#00628B" Foreground="White" Margin="0 5 0 5" Content="Exit" VerticalAlignment="Center" HorizontalAlignment="Center" Height="21" Width="81" Click="Exit" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Grid >
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00628B" Offset="1"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFEEEEEE" Offset="0.964"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="130"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" >
+                <Image Grid.Column="1" Height="100" Width="100" Source="Avatar.png"/>
+                <TextBlock x:Name="lblFullname" Foreground="black" Margin="15 10 0 3" Text="Muhammad Areeb" />
+                <TextBlock x:Name="lblMail" Foreground="black" Margin="15 0 0 3" Text="Emailmail.com" />
+                <TextBlock x:Name="lblphone" Foreground="black" Margin="15 0 0 3" Text="Phone 03303303300"/>
+                <TextBlock x:Name="lblSpeciality_occupation" Foreground="black" Margin="15 0 0 3" Text="Speciality"/>
+                <TextBlock x:Name="lblExperience_Diagnosis" Foreground="black" Margin="15 0 0 3" Text="Experience"/>
+                <TextBlock x:Name="lblAddress" Foreground="black" Margin="15 0 0 3" Text="Address"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock Text="BIO" Margin="25 25 0 0" FontFamily="Century Gothic" FontSize="20"/>
+
+                <RichTextBox x:Name="richTextBox" Margin="25 10 50 0" Height="150" Cursor="Help" IsEnabled="False">
+                    <FlowDocument IsEnabled="False">
+                        <Paragraph>
+                            <Run Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque leo mi, consectetur sed euismod nec, sollicitudin porttitor dui. Donec quis lorem libero. Ut vitae facilisis enim, sit amet lobortis nibh. Sed in urna aliquam lacus rutrum maximus ac in dolor. Duis interdum mollis eros eget malesuada. Vivamus ullamcorper leo metus, vitae blandit ex posuere vitae. Sed ac gravida velit. Nunc egestas neque ut lacus condimentum"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+    </StackPanel>
+</Page>
